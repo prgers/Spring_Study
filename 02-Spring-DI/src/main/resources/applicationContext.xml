@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person" class="com.prger.domain.Person">
+        <property name="name" value="潘小懒" />
+        <property name="age" value="18" />
+    </bean>
+
+    <bean id="person2" class="com.prger.domain.Person">
+        <constructor-arg name="name" value="小汤圆"/>
+        <constructor-arg name="age" value="0.3"/>
+    </bean>
+</beans>
