@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userService" class="com.prger.service.impl.UserServiceImpl"/>
+    <bean id="person" class="com.prger.domain.Person"/>
+    <bean id="testService" class="com.prger.service.a.b.c.impl.TestServiceImpl"/>
+
+    <!--附加代码-->
+    <bean id="logAdvice" class="com.prger.aop.LogAdvice"/>
+    <bean id="logInterceptor" class="com.prger.aop.LogInterceptor"/>
+
+<!--    <aop:config>-->
+<!--        <aop:pointcut id="pc" expression="execution(* *(..))"/>-->
+<!--        <aop:advisor advice-ref="logAdvice" pointcut-ref="pc"/>-->
+<!--    </aop:config>-->
+
+    <aop:config>
+<!--        <aop:pointcut id="pc" expression="execution(* *(..))"/>-->
+<!--        <aop:pointcut id="pc" expression="execution(* com.prger.service.UserService.login(..))"/>-->
+<!--        <aop:pointcut id="pc" expression="execution(* l*(..))"/>-->
+<!--        <aop:pointcut id="pc" expression="execution(* com.prger.service..*.*(..))"/>-->
+<!--        <aop:pointcut id="pc" expression="execution(* *(String, String))"/>-->
+        <aop:pointcut id="pc" expression="within(com.prger.service..*.*)"/>
+        <aop:advisor advice-ref="logInterceptor" pointcut-ref="pc"/>
+    </aop:config>
+
+</beans>
