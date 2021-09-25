@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.prger.dao.JobDao.JobDao">
+<mapper namespace="com.prger.dao.JobDao">
 
     <sql id="sqlList">
         SELECT * FROM job
@@ -11,5 +11,9 @@
     <select id="list" resultType="Job">
         <include refid="sqlList"/>
     </select>
+
+    <insert id="save" parameterType="Job">
+        INSERT INTO job(name, duty) VALUES (#{name}, #{duty})
+    </insert>
 
 </mapper>

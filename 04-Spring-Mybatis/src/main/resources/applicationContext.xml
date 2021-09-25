@@ -37,7 +37,7 @@
         <!--设置sqlSessionFactoryBean的id-->
         <property name="sqlSessionFactoryBeanName" value="sessionFactory"/>
         <!--设置dao的包-->
-        <property name="basePackage" value="com.prger.dao"/>
+        <property name="basePackage" value="com.prger.dao.JobDao"/>
     </bean>
 
 </beans>
