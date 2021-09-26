@@ -10,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class PersonDaoTest {
 
+
     @Test
     public void test() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
